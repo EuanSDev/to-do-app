@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap");
+
+:root {
+	--primary: #34d399;
+	--dark: #111827;
+	--dark-grey: #1f2937;
+	--grey: #374151;
+	--lighter-grey: #79808c;
+	--remove: #ef4444;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+body {
+	background-color: var(--dark-grey);
+}
+
+input,
+button {
+	appearance: none;
+	border: none;
+	outline: none;
+	background: none;
+}
+
+/* Header */
+header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--dark);
+	border-bottom: 4px solid var(--primary);
+
+	.logo {
+		width: auto;
+		height: auto;
+
+		h1 {
+			font-size: 48px;
+			color: #fff;
+		}
+	}
+}
+
+/* Main */
+main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 1 1 0%;
+}
+
+/* Add Tasks */
+.application {
+	margin-top: 50px;
+	width: 600px;
+	min-height: 770px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	h3 {
+		color: var(--lighter-grey);
+		font-size: 16px;
+		font-weight: 400;
+		text-transform: uppercase;
+		padding-bottom: 10px;
+	}
+
+	.no-tasks {
+		margin-top: 30px;
+	}
+
+	.caption {
+		width: 80%;
+	}
+
+	.add-task {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+
+		.input {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 80%;
+
+			input[type='text'] {
+				display: block;
+				width: 100%;
+				appearance: none;
+				border: none;
+				outline: none;
+				padding: 10px;
+				border-radius: 10px;
+				background-color: var(--grey);
+				color: #fff;
+				font-size: 18px;
+				font-style: italic;
+
+				&::placeholder {
+					// Chrome, Firefox, Opera, Safari 10.1+
+					color: #fff;
+					opacity: 1; // Firefox
+				}
+				&:-ms-input-placeholder {
+					// Internet Explorer 10-11
+					color: #fff;
+				}
+				&::-ms-input-placeholder {
+					// Microsoft Edge
+					color: #fff;
+				}
+			}
+
+			.add-task-button {
+				width: 100%;
+				margin-top: 30px;
+				display: flex;
+				justify-content: flex-end;
+				align-items: center;
+
+				button {
+					padding: 8px 40px;
+					border-radius: 15px;
+					background-color: var(--primary);
+					color: #fff;
+					border: none;
+					outline: none;
+					appearance: none;
+					font-size: 22px;
+					text-transform: uppercase;
+					font-weight: 600;
+					cursor: pointer;
+					border: 1px solid var(--primary);
+					transition: 0.3s;
+
+					&:hover {
+						transform: scale(1.1);
+					}
+					&:active {
+						background: none;
+					}
+				}
+			}
+		}
+	}
+
+	.tasks {
+		width: 80%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		.tasks-list {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+
+			.item {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 100%;
+				padding: 10px 15px;
+				margin-bottom: 15px;
+				border-radius: 10px;
+				background-color: var(--grey);
+
+				button {
+					display: inline-block;
+				}
+
+				.done-btn {
+					width: 20px;
+					height: 20px;
+					border: 2px solid var(--primary);
+					background: none;
+					border-radius: 50%;
+					transition: 0.3s;
+					cursor: pointer;
+
+					&:active {
+						transform: scale(1.1);
+					}
+				}
+
+				.done-fill {
+					background-color: var(--primary);
+				}
+
+				.item-text {
+					background: none;
+					outline: none;
+					border: none;
+					appearance: none;
+					padding: 0 10px;
+					color: #fff;
+					font-size: 18px;
+					width: 100%;
+				}
+
+				.text-done {
+					color: #fff;
+					text-decoration: line-through;
+				}
+
+				.remove-btn::before,
+				.remove-btn::after{
+					content: '';
+					position: absolute;
+					width: 3px;
+					height: 20px;
+					background-color: var(--remove);
+					border-radius: 99px;
+					cursor: pointer;
+					margin-top: -10px;
+					margin-left: -2px;
+				}
+
+				.remove-btn::before {
+					transform: rotate(-45deg);
+				}
+				.remove-btn::after {
+					transform: rotate(45deg);
+				}
+			}
+		}
+	}
+}
+
+/* Footer */
+footer {
+	width: 100%;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	h5 {
+		font-size: 18px;
+		color: #fff;
+		font-weight: 300;
+	}
+}
