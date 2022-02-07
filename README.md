@@ -2,7 +2,7 @@ Run: npm i
 
 Run: npm start - 1st terminal.
 
-Run: start server - 2nd termianl.
+Run: npm run server - 2nd termianl.
 
 
 # Getting Started with Create React App
